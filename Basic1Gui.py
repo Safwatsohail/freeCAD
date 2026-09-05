@@ -1,18 +1,47 @@
-from PySide import QtCore
 import FreeCAD
 import FreeCADGui
 
+_IconXpm = """
+/* XPM */
+static char * basic1_xpm[] = {
+"16 16 5 1",
+"     c None",
+".    c #FFFFFF",
+"+    c #000000",
+"@    c #7F4F00",
+"#    c #FFBF00",
+"................",
+"...++++++++++++.",
+"..+@#########++.",
+".+@#########+@+.",
+".+++++++++++@#+.",
+".+#########+##+.",
+".+###++####+##+.",
+".+####+####+##+.",
+".+####+####+##+.",
+".+####+####+##+.",
+".+####+####+##+.",
+".+###+++###+#@+.",
+".+#########+@+..",
+".++++++++++++...",
+"................"};
+"""
+
 
 def MakeBox():
+    """Create a 10x10x10 Part Box in the active document."""
     doc = FreeCAD.ActiveDocument
     if doc is None:
-        FreeCAD.Console.PrintError("Basic1: No active document. Please create one first.\n")
+        FreeCAD.Console.PrintError(
+            "Basic1: No active document. Please create a new document first (File > New).\n"
+        )
         return
     box = doc.addObject("Part::Box", "Box")
     box.Length = 10
     box.Width = 10
     box.Height = 10
     doc.recompute()
+    FreeCAD.Console.PrintMessage("Basic1: Box created.\n")
 
 
 class _MakeBoxCmd:
@@ -22,13 +51,10 @@ class _MakeBoxCmd:
         MakeBox()
 
     def GetResources(self):
-        MenuText = QtCore.QT_TRANSLATE_NOOP("Basic1_Box", "Box")
-        ToolTip = QtCore.QT_TRANSLATE_NOOP("Basic1_Box", "Create a box")
         return {
-            'MenuText': MenuText,
-            'ToolTip': ToolTip,
-            # Use FreeCAD's built-in Part_Box icon (no external file needed)
-            'Pixmap': 'Part_Box'
+            'MenuText': 'Box',
+            'ToolTip': 'Create a 10x10x10 box',
+            'Pixmap': _IconXpm,
         }
 
     def IsActive(self):

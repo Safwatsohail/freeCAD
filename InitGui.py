@@ -3,7 +3,8 @@ import FreeCADGui
 
 
 class Basic1WorkBench(FreeCADGui.Workbench):
-    "Basic1 workbench object"
+    """Basic1 workbench object"""
+
     Icon = """
     /* XPM */
     static char * basic1_xpm[] = {
@@ -34,13 +35,12 @@ class Basic1WorkBench(FreeCADGui.Workbench):
     ToolTip = "Basic1 workbench"
 
     def Initialize(self):
-        "this function is executed when FreeCAD starts and initializes the workbench"
-        from PySide import QtCore
+        """This function is executed when FreeCAD starts and initializes the workbench"""
         import Basic1Gui
-        cmdlist = ["Basic1_Box"]
-        self.appendToolbar(str(QtCore.QT_TRANSLATE_NOOP("Basic1", "Basic1 Tools")), cmdlist)
 
-        self.appendMenu(str(QtCore.QT_TRANSLATE_NOOP("Basic1", "Basic1")), cmdlist)
+        cmdlist = ["Basic1_Box"]
+        self.appendToolbar("Basic1 Tools", cmdlist)
+        self.appendMenu("Basic1", cmdlist)
         FreeCAD.Console.Log("Initializing Basic1 workbench... done\n")
 
     def GetClassName(self):
