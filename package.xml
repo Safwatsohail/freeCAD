@@ -5,7 +5,7 @@
   <version>1.1.0</version>
   <date>2026-09-05</date>
   <maintainer email="safwatsohail@example.com">Safwat</maintainer>
-  <license>MIT</license>
+  <license file="LICENSE">MIT</license>
   <url type="repository" branch="main">https://github.com/Safwatsohail/freeCAD</url>
   <icon>Basic1Icon.xpm</icon>
 
