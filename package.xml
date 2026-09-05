@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package format="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://wiki.freecad.org/Package.xml">
+  <name>Basic1</name>
+  <description>Basic1 workbench - creates a 10x10x10 box</description>
+  <version>1.0.0</version>
+  <date>2026-09-05</date>
+  <maintainer email="safwatsohail@example.com">Safwat</maintainer>
+  <license>MIT</license>
+  <url type="repository" branch="main">https://github.com/safwatsohail/freecad</url>
+  <icon>InitGui.py</icon>
+  <content>
+    <workbench>
+      <name>Basic1</name>
+      <classname>Basic1WorkBench</classname>
+      <file>InitGui.py</file>
+      <icon>InitGui.py</icon>
+    </workbench>
+  </content>
+</package>
