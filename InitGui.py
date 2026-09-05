@@ -41,7 +41,7 @@ class Basic1WorkBench(FreeCADGui.Workbench):
         cmdlist = ["Basic1_Box"]
         self.appendToolbar("Basic1 Tools", cmdlist)
         self.appendMenu("Basic1", cmdlist)
-        FreeCAD.Console.Log("Initializing Basic1 workbench... done\n")
+        FreeCAD.Console.PrintMessage("Initializing Basic1 workbench... done\n")
 
     def GetClassName(self):
         return "Gui::PythonWorkbench"
